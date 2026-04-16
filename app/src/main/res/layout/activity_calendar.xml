@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendarRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    tools:context=".CalendarActivity">
+
+    <TextView
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="&lt;"
+        android:textColor="@color/primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calendarTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="24dp"
+        android:text="Monthly Progress"
+        android:textColor="@color/on_surface"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <TextView
+        android:id="@+id/monthText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        tools:text="April 2026" />
+
+    <LinearLayout
+        android:id="@+id/statsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_primary_gradient"
+        android:orientation="vertical"
+        android:padding="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monthText">
+
+        <TextView
+            android:id="@+id/monthStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="5 complete days" />
+
+        <TextView
+            android:id="@+id/monthSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/on_primary"
+            android:textSize="14sp"
+            tools:text="75% of tracked days completed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dayLabels"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statsCard">
+
+        <TextView style="@style/CalendarDayLabel" android:text="Sun" />
+        <TextView style="@style/CalendarDayLabel" android:text="Mon" />
+        <TextView style="@style/CalendarDayLabel" android:text="Tue" />
+        <TextView style="@style/CalendarDayLabel" android:text="Wed" />
+        <TextView style="@style/CalendarDayLabel" android:text="Thu" />
+        <TextView style="@style/CalendarDayLabel" android:text="Fri" />
+        <TextView style="@style/CalendarDayLabel" android:text="Sat" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendarRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dayLabels"
+        tools:listitem="@layout/item_calendar_day" />
+</androidx.constraintlayout.widget.ConstraintLayout>

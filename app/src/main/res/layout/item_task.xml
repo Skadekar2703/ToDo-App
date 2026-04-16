@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/taskCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/checkbox_tint" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/taskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Study DSA" />
+
+            <TextView
+                android:id="@+id/subTaskProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="2/3 items" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/subTaskProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:indeterminate="false"
+        app:indicatorColor="@color/primary"
+        app:trackColor="@color/surface_container_low"
+        app:trackThickness="6dp" />
+
+    <LinearLayout
+        android:id="@+id/subTaskContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/addSubTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="+ Add subtask"
+        android:textColor="@color/primary"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+</LinearLayout>
